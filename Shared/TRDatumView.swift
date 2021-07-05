@@ -11,14 +11,17 @@ struct TRDatumView: View {
     var datum: Datum
         
     var body: some View {
+        let nameAndDateString = datum.author.name + " / " + datum.date.formattedFromTimestamp
+        
         VStack {
             Text(datum.title)
                 .font(.title)
-            HStack {
-                Text(datum.author.name)
-                Text("/")
-                Text(datum.date.formattedFromTimestamp)
-            }
+            Text(nameAndDateString)
+                .lineLimit(1)
+            Text(datum.datumDescription)
+                .lineLimit(2)
+                .multilineTextAlignment(.leading)
+                .truncationMode(.tail)
         }
     }
 }
