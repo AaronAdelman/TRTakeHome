@@ -10,7 +10,7 @@ import Foundation
 class TRModel: ObservableObject {
     static let shared = TRModel()
 
-    @Published var queryResponses: Array<TRQueryResponse> = []
+    @Published var data: Array<Datum> = []
     //    var total: Int = 0
     var totalQueryResponses: Int = 0
     @Published var queryString: String = ""
@@ -23,9 +23,9 @@ class TRModel: ObservableObject {
     func update(withQueryResponse queryResponse: TRQueryResponse, queryString: String, pageNumber: Int) {
         DispatchQueue.main.async {
             if pageNumber == 1 {
-                self.queryResponses.append(queryResponse)
+                self.data.append(contentsOf: queryResponse.data)
                 //            self.total         = queryResponses.total
-                self.totalQueryResponses     = self.queryResponses.count
+                self.totalQueryResponses += 1
                 self.queryString   = queryString
                 self.error         = nil
                 self.isWaitingForNewQueryResponse = false
@@ -42,7 +42,7 @@ class TRModel: ObservableObject {
     }
     
     func isLastHit(_ index: Int) -> Bool {
-        if index == self.queryResponses.count - 1 {
+        if index == self.data.count - 1 {
             return true
         }
         
@@ -66,7 +66,7 @@ class TRModel: ObservableObject {
 //
 //        pageNumber = newPageNumber
         
-        let pageNumber = self.queryResponses.count + 1
+        let pageNumber = self.totalQueryResponses + 1
         self.query(queryString, pageNumber: pageNumber)
     }
     

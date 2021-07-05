@@ -41,17 +41,17 @@ struct ContentView: View {
                     TRTextMessage(text: model.error!.localizedDescription)
                 } else {
 
-                    if model.queryResponses.count > 0 {
+                    if model.data.count > 0 {
                         HStack {
                             Text("Showing results for query:  ")
                             Text(model.queryString)
                         }
-                        ScrollView {
-//                            LazyVGrid(columns: threeColumnGrid) {
-//                                ForEach(0..<model.hits.count, id: \.self) {
-//                                    PBHitView(model: model, index: $0)
-//                                }
-//                            }
+                        List {
+                            ForEach(model.data, id: \.id) {
+                             datum
+                                in
+                                TRDatumView(datum: datum)
+                            }
                         }
                         Spacer()
                     } else {

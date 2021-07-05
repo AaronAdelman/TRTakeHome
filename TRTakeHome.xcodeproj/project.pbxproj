@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A543D1E92692F48000044706 /* TRDatumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543D1E82692F48000044706 /* TRDatumView.swift */; };
+		A543D1EA2692F48000044706 /* TRDatumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543D1E82692F48000044706 /* TRDatumView.swift */; };
 		A5A3312E2692DFDC002F2D74 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A3312D2692DFDC002F2D74 /* Tests_iOS.swift */; };
 		A5A331392692DFDD002F2D74 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A331382692DFDD002F2D74 /* Tests_macOS.swift */; };
 		A5A3313B2692DFDD002F2D74 /* TRTakeHomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A331122692DFDB002F2D74 /* TRTakeHomeApp.swift */; };
@@ -41,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A543D1E82692F48000044706 /* TRDatumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRDatumView.swift; sourceTree = "<group>"; };
 		A5A331122692DFDB002F2D74 /* TRTakeHomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRTakeHomeApp.swift; sourceTree = "<group>"; };
 		A5A331132692DFDB002F2D74 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A5A331142692DFDC002F2D74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +116,7 @@
 				A5A3314F2692E216002F2D74 /* TRQueryResponse.swift */,
 				A5A331122692DFDB002F2D74 /* TRTakeHomeApp.swift */,
 				A5A331552692E99E002F2D74 /* TRProgressView.swift */,
+				A543D1E82692F48000044706 /* TRDatumView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -320,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A543D1E92692F48000044706 /* TRDatumView.swift in Sources */,
 				A5A3313D2692DFDD002F2D74 /* ContentView.swift in Sources */,
 				A5A331562692E99E002F2D74 /* TRProgressView.swift in Sources */,
 				A5A331502692E216002F2D74 /* TRQueryResponse.swift in Sources */,
@@ -332,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A543D1EA2692F48000044706 /* TRDatumView.swift in Sources */,
 				A5A3313E2692DFDD002F2D74 /* ContentView.swift in Sources */,
 				A5A331572692E99E002F2D74 /* TRProgressView.swift in Sources */,
 				A5A331512692E216002F2D74 /* TRQueryResponse.swift in Sources */,
