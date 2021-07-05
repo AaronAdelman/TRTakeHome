@@ -51,8 +51,12 @@ struct ContentView: View {
                                 let datum = model.data[$0]
                                 
                                 TRDatumView(datum: datum, index: $0)
+                            } // ForEach
+                            
+                            if model.isWaitingForNewQueryResponse {
+                                TRProgressView()
                             }
-                        }
+                        } // List
                         Spacer()
                     } else {
                         TRTextMessage(text: NSLocalizedString("No results.  Please enter a search term to see news articles.", comment: ""))
