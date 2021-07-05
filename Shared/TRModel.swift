@@ -55,6 +55,7 @@ class TRModel: ObservableObject {
     func getFirstPage(queryString: String) {
 //        self.pageNumber = 1
         self.queryString = queryString
+        self.data = []
         self.query(queryString, pageNumber: 1)
     }
     
