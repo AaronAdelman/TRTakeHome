@@ -1,0 +1,6 @@
+framework module Pods_TRTakeHome__iOS_ {
+  umbrella header "Pods-TRTakeHome (iOS)-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -15,6 +15,15 @@ struct TRDatumView: View {
         let nameAndDateString = datum.author.name + " / " + datum.date.formattedFromTimestamp
         
         VStack(alignment: .leading) {
+            let imageSource = datum.image.src
+            if imageSource != nil {
+                let imageSourceURL: URL? = URL(string: imageSource!)
+                if imageSourceURL != nil {
+                    KFImage(imageSourceURL!)
+                }
+            }
+
+            
             HStack {
                 let authorImageSource = datum.author.image.src
                 if authorImageSource != nil {
