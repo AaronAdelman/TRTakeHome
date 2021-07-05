@@ -20,17 +20,20 @@ class TRModel: ObservableObject {
     
 //    var pageNumber = 1
     
+    private var shouldLoadMorePages = true
+    
     func update(withQueryResponse queryResponse: TRQueryResponse, queryString: String, pageNumber: Int) {
         DispatchQueue.main.async {
-            if pageNumber == 1 {
-                self.data.append(contentsOf: queryResponse.data)
-                //            self.total         = queryResponses.total
-                self.totalQueryResponses += 1
-                self.queryString   = queryString
-                self.error         = nil
-                self.isWaitingForNewQueryResponse = false
-                debugPrint(#file, #function, "Updated model")
+            self.data.append(contentsOf: queryResponse.data)
+            if queryResponse.data.count < 20 {
+                self.shouldLoadMorePages = false
             }
+            //            self.total         = queryResponses.total
+            self.totalQueryResponses += 1
+            self.queryString   = queryString
+            self.error         = nil
+            self.isWaitingForNewQueryResponse = false
+            debugPrint(#file, #function, "Updated model")
         }
     } // func update(with queryResponse: TRQueryResponse, queryString: String)
     
@@ -41,7 +44,7 @@ class TRModel: ObservableObject {
         }
     }
     
-    func isLastHit(_ index: Int) -> Bool {
+    func isLastDatum(_ index: Int) -> Bool {
         if index == self.data.count - 1 {
             return true
         }
@@ -56,18 +59,10 @@ class TRModel: ObservableObject {
     }
     
     func getNextPage() {
-//        let totalPages = Int(ceil(Double(total) / Double(totalQueryResponses)))
-//        let newPageNumber = pageNumber + 1
-//        debugPrint(#file, #function, "Total:", total, "Total hits:", totalQueryResponses, "Total pages:", totalPages, "New page number:", newPageNumber)
-//        if newPageNumber > totalPages {
-//            // Weird things happen if we ask for nonexistent pages
-//            return
-//        }
-//
-//        pageNumber = newPageNumber
-        
-        let pageNumber = self.totalQueryResponses + 1
-        self.query(queryString, pageNumber: pageNumber)
+        if shouldLoadMorePages {
+            let pageNumber = self.totalQueryResponses + 1
+            self.query(queryString, pageNumber: pageNumber)
+        }
     }
     
     func query(_ queryString: String, pageNumber: Int) {
@@ -90,8 +85,18 @@ class TRModel: ObservableObject {
                     self.isWaitingForNewQueryResponse = false
                 }
                 
-                guard let httpResponse = response as? HTTPURLResponse,
-                      (200...299).contains(httpResponse.statusCode) else {
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    self.handleServerError(error: error!)
+                    return
+                }
+                
+                if !(200...299).contains(httpResponse.statusCode) {
+                    if httpResponse.statusCode == 404 {
+                        // No more pages to load
+                        self.shouldLoadMorePages = false
+                        return
+                    }
+                    
                     self.handleServerError(error: error!)
                     return
                 }

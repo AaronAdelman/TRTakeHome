@@ -12,6 +12,7 @@ import Foundation
 
 struct TRDatumView: View {
     var datum: Datum
+    var index: Int
     
     fileprivate func requestURL() -> URL {
         let provisionalURL: URL? = URL(string: datum.link)
@@ -69,6 +70,11 @@ struct TRDatumView: View {
                     .multilineTextAlignment(.leading)
                     .truncationMode(.tail)
             } // VStack
+            .onAppear() {
+                if TRModel.shared.isLastDatum(index) {
+                    TRModel.shared.getNextPage()
+                }
+            }
         }
     }
 }

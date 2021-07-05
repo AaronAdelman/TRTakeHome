@@ -47,10 +47,10 @@ struct ContentView: View {
                             Text(model.queryString)
                         }
                         List {
-                            ForEach(model.data, id: \.id) {
-                             datum
-                                in
-                                TRDatumView(datum: datum)
+                            ForEach(0..<model.data.count, id: \.self) {
+                                let datum = model.data[$0]
+                                
+                                TRDatumView(datum: datum, index: $0)
                             }
                         }
                         Spacer()
