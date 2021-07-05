@@ -18,7 +18,7 @@ struct TRDatumView: View {
                 .font(.title)
             Text(nameAndDateString)
                 .lineLimit(1)
-            Text(datum.datumDescription)
+            Text(datum.datumDescription.trimHTMLTags() ?? "")
                 .lineLimit(2)
                 .multilineTextAlignment(.leading)
                 .truncationMode(.tail)

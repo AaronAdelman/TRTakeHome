@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
     var dateFromTimestamp: Date? {
@@ -33,5 +34,22 @@ extension String {
 
         return formattedDate
     }
+}
+
+
+// From https://stackoverflow.com/questions/25983558/stripping-out-html-tags-from-a-string
+extension String {
+    public func trimHTMLTags() -> String? {
+        guard let htmlStringData = self.data(using: String.Encoding.utf8) else {
+            return nil
+        }
     
+        let options: [NSAttributedString.DocumentReadingOptionKey : Any] = [
+            .documentType: NSAttributedString.DocumentType.html,
+            .characterEncoding: String.Encoding.utf8.rawValue
+        ]
+    
+        let attributedString = try? NSAttributedString(data: htmlStringData, options: options, documentAttributes: nil)
+        return attributedString?.string
+    }
 }
