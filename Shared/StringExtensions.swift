@@ -19,16 +19,42 @@ extension String {
     }
     
     var formattedFromTimestamp: String {
-        let outputDateFormatter = DateFormatter()
-        outputDateFormatter.locale = Locale(identifier: "en_US")
-        outputDateFormatter.dateStyle = .medium
-        outputDateFormatter.timeStyle = .medium
-        
         let importedDate: Date? = self.dateFromTimestamp
-        debugPrint(#file, #function, importedDate as Any)
+        
         if importedDate == nil {
-            return "???"
+            // Something went horribly wrong.  Complain to server person for changing the JSON formatting without warning.
+            return ""
         }
+
+        let SECONDS_PER_MINUTE = 60.0
+        let SECONDS_PER_HOUR   = 60.0 * SECONDS_PER_MINUTE
+        let SECONDS_PER_DAY    = 24.0 * SECONDS_PER_HOUR
+        
+        let now = Date()
+        let interval = now.timeIntervalSince(importedDate!)
+        
+        if interval < 5.0 * SECONDS_PER_MINUTE {
+            return "Now"
+        }
+        
+        if interval < SECONDS_PER_HOUR {
+            let minutes: Int = Int(floor(interval / SECONDS_PER_MINUTE))
+            return "\(minutes) minutes ago"
+        }
+        
+        if interval < SECONDS_PER_DAY {
+            let hours: Int = Int(floor(interval / SECONDS_PER_HOUR))
+            return "\(hours) hours ago"
+        }
+        
+        if interval < 7.0 * SECONDS_PER_DAY {
+            let days: Int = Int(floor(interval / SECONDS_PER_DAY))
+            return "\(days) days ago"
+        }
+        
+        let outputDateFormatter = ISO8601DateFormatter()
+        outputDateFormatter.formatOptions = [.withFullDate]
+        
         let formattedDate = outputDateFormatter.string(from: importedDate!)
         debugPrint(#file, #function, formattedDate)
 
