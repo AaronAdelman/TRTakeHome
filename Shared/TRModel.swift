@@ -62,6 +62,8 @@ class TRModel: ObservableObject {
     }
     
     func query(_ queryString: String, pageNumber: Int) {
+        error = nil
+        
         let baseURLString = "https://www.tipranks.com/api/news/posts"
         let tweakedQueryString = queryString.replacingOccurrences(of: " ", with: "+")
         let urlString = "\(baseURLString)?page=\(pageNumber)&per_page=20&search=\(tweakedQueryString)"
