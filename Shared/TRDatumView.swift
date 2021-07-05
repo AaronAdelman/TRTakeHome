@@ -79,9 +79,3 @@ struct TRDatumView: View {
     }
 }
 
-
-//struct TRDatumView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TRDatumView()
-//    }
-//}

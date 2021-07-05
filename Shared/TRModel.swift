@@ -11,15 +11,12 @@ class TRModel: ObservableObject {
     static let shared = TRModel()
 
     @Published var data: Array<Datum> = []
-    //    var total: Int = 0
     var totalQueryResponses: Int = 0
     @Published var queryString: String = ""
     @Published var error: Error?
     
     @Published var isWaitingForNewQueryResponse: Bool = false
-    
-//    var pageNumber = 1
-    
+        
     private var shouldLoadMorePages = true
     
     func update(withQueryResponse queryResponse: TRQueryResponse, queryString: String, pageNumber: Int) {
@@ -28,16 +25,15 @@ class TRModel: ObservableObject {
             if queryResponse.data.count < 20 {
                 self.shouldLoadMorePages = false
             }
-            //            self.total         = queryResponses.total
             self.totalQueryResponses += 1
             self.queryString   = queryString
             self.error         = nil
             self.isWaitingForNewQueryResponse = false
-            debugPrint(#file, #function, "Updated model")
+//            debugPrint(#file, #function, "Updated model")
         }
     } // func update(with queryResponse: TRQueryResponse, queryString: String)
     
-    func update(withError error: Error) {
+    func update(withError error: Error?) {
         DispatchQueue.main.async {
             self.error = error
             self.isWaitingForNewQueryResponse = false
@@ -53,7 +49,6 @@ class TRModel: ObservableObject {
     }
     
     func getFirstPage(queryString: String) {
-//        self.pageNumber = 1
         self.queryString = queryString
         self.data = []
         self.query(queryString, pageNumber: 1)
@@ -67,10 +62,6 @@ class TRModel: ObservableObject {
     }
     
     func query(_ queryString: String, pageNumber: Int) {
-        defer {
-//            self.update(withError: false)
-        } // defer
-        
         let baseURLString = "https://www.tipranks.com/api/news/posts"
         let tweakedQueryString = queryString.replacingOccurrences(of: " ", with: "+")
         let urlString = "\(baseURLString)?page=\(pageNumber)&per_page=20&search=\(tweakedQueryString)"

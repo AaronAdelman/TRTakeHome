@@ -10,8 +10,6 @@ import SwiftUI
 struct ContentView: View {
     @State var queryString: String = ""
     @ObservedObject var model: TRModel = TRModel.shared
-
-//    private var threeColumnGrid = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
     @State var isNavigationBarHidden: Bool = true
 
@@ -22,7 +20,6 @@ struct ContentView: View {
                     TextField("Query", text: $queryString)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     Button(action: {
-                        //                debugPrint(#file, #function, "Pressed search button", queryString)
                         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                         TRModel.shared.getFirstPage(queryString: queryString)
                     }) {

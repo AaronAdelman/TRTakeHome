@@ -24,7 +24,7 @@ extension String {
         let importedDate: Date? = self.dateFromTimestamp
         
         if importedDate == nil {
-            // Something went horribly wrong.  Complain to server person for changing the JSON formatting without warning.
+            // Something went horribly wrong.  Complain to the server person for changing the JSON formatting without warning.
             return ""
         }
 
