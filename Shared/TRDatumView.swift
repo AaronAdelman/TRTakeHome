@@ -16,13 +16,16 @@ struct TRDatumView: View {
         VStack {
             Text(datum.title)
                 .font(.title)
+                .lineLimit(1)
+            
             Text(nameAndDateString)
                 .lineLimit(1)
-            Text(datum.datumDescription.trimHTMLTags() ?? "")
+            
+            Text(datum.datumDescription.withoutHTMLTags())
                 .lineLimit(2)
                 .multilineTextAlignment(.leading)
                 .truncationMode(.tail)
-        }
+        } // VStack
     }
 }
 

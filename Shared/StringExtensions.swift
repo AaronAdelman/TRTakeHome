@@ -19,6 +19,8 @@ extension String {
     }
     
     var formattedFromTimestamp: String {
+        // NOTE:  This is not a good way of doing the formatting.  In a production setting, the specs would prompt a discussion about localization, including wonderful options Apple has added to its OSs.
+        
         let importedDate: Date? = self.dateFromTimestamp
         
         if importedDate == nil {
@@ -65,17 +67,8 @@ extension String {
 
 // From https://stackoverflow.com/questions/25983558/stripping-out-html-tags-from-a-string
 extension String {
-    public func trimHTMLTags() -> String? {
-        guard let htmlStringData = self.data(using: String.Encoding.utf8) else {
-            return nil
-        }
-    
-        let options: [NSAttributedString.DocumentReadingOptionKey : Any] = [
-            .documentType: NSAttributedString.DocumentType.html,
-            .characterEncoding: String.Encoding.utf8.rawValue
-        ]
-    
-        let attributedString = try? NSAttributedString(data: htmlStringData, options: options, documentAttributes: nil)
-        return attributedString?.string
+    func withoutHTMLTags() -> String {
+        let str = self.replacingOccurrences(of: "<style>[^>]+</style>", with: "", options: .regularExpression, range: nil)
+        return str.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
     }
 }
