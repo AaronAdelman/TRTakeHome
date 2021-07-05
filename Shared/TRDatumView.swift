@@ -10,7 +10,7 @@ import Kingfisher
 
 struct TRDatumView: View {
     var datum: Datum
-        
+    
     var body: some View {
         let nameAndDateString = datum.author.name + " / " + datum.date.formattedFromTimestamp
         
@@ -20,9 +20,12 @@ struct TRDatumView: View {
                 let imageSourceURL: URL? = URL(string: imageSource!)
                 if imageSourceURL != nil {
                     KFImage(imageSourceURL!)
+                        .placeholder({
+                            TRProgressView()
+                        })
                 }
             }
-
+            
             
             HStack {
                 let authorImageSource = datum.author.image.src
@@ -30,12 +33,15 @@ struct TRDatumView: View {
                     let authorImageSourceURL: URL? = URL(string: authorImageSource!)
                     if authorImageSourceURL != nil {
                         KFImage(authorImageSourceURL!)
+                            .placeholder({
+                                TRProgressView()
+                            })
                             .clipShape(Circle())
                             .overlay(Circle()
                                         .stroke(Color.black, lineWidth: 2.0))
                     }
                 }
-
+                
                 VStack(alignment: .leading) {
                     Text(datum.title)
                         .font(.title)
