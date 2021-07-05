@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct TRDatumView: View {
     var datum: Datum
@@ -13,13 +14,28 @@ struct TRDatumView: View {
     var body: some View {
         let nameAndDateString = datum.author.name + " / " + datum.date.formattedFromTimestamp
         
-        VStack {
-            Text(datum.title)
-                .font(.title)
-                .lineLimit(1)
-            
-            Text(nameAndDateString)
-                .lineLimit(1)
+        VStack(alignment: .leading) {
+            HStack {
+                let authorImageSource = datum.author.image.src
+                if authorImageSource != nil {
+                    let authorImageSourceURL: URL? = URL(string: authorImageSource!)
+                    if authorImageSourceURL != nil {
+                        KFImage(authorImageSourceURL!)
+                            .clipShape(Circle())
+                            .overlay(Circle()
+                                        .stroke(Color.black, lineWidth: 2.0))
+                    }
+                }
+
+                VStack(alignment: .leading) {
+                    Text(datum.title)
+                        .font(.title)
+                        .lineLimit(1)
+                    
+                    Text(nameAndDateString)
+                        .lineLimit(1)
+                } // VStack
+            } // HStack
             
             Text(datum.datumDescription.withoutHTMLTags())
                 .lineLimit(2)
@@ -28,6 +44,7 @@ struct TRDatumView: View {
         } // VStack
     }
 }
+
 
 //struct TRDatumView_Previews: PreviewProvider {
 //    static var previews: some View {

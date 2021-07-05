@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		830C02D266837601E968AFED /* Pods_TRTakeHome__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5731612756A481CA82FDEFD7 /* Pods_TRTakeHome__iOS_.framework */; };
 		A543D1E92692F48000044706 /* TRDatumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543D1E82692F48000044706 /* TRDatumView.swift */; };
 		A543D1EA2692F48000044706 /* TRDatumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543D1E82692F48000044706 /* TRDatumView.swift */; };
 		A5A3312E2692DFDC002F2D74 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A3312D2692DFDC002F2D74 /* Tests_iOS.swift */; };
@@ -27,6 +28,8 @@
 		A5CC8A012692FD2B00983B96 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC89FF2692FD2B00983B96 /* StringExtensions.swift */; };
 		A5CC8A02269301AA00983B96 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC89FF2692FD2B00983B96 /* StringExtensions.swift */; };
 		A5CC8A03269301AA00983B96 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC89FF2692FD2B00983B96 /* StringExtensions.swift */; };
+		A5CC8A0926932A1600983B96 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A5CC8A0826932A1600983B96 /* Podfile */; };
+		A5CC8A0A26932A1600983B96 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A5CC8A0826932A1600983B96 /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		55CCDA2DCC24B3B99AF1A027 /* Pods-TRTakeHome (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRTakeHome (iOS).release.xcconfig"; path = "Target Support Files/Pods-TRTakeHome (iOS)/Pods-TRTakeHome (iOS).release.xcconfig"; sourceTree = "<group>"; };
+		5731612756A481CA82FDEFD7 /* Pods_TRTakeHome__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TRTakeHome__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74BA2108A53C6A38CC5FA7F5 /* Pods-TRTakeHome (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRTakeHome (iOS).debug.xcconfig"; path = "Target Support Files/Pods-TRTakeHome (iOS)/Pods-TRTakeHome (iOS).debug.xcconfig"; sourceTree = "<group>"; };
 		A543D1E82692F48000044706 /* TRDatumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRDatumView.swift; sourceTree = "<group>"; };
 		A5A331122692DFDB002F2D74 /* TRTakeHomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRTakeHomeApp.swift; sourceTree = "<group>"; };
 		A5A331132692DFDB002F2D74 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +72,7 @@
 		A5A331522692E880002F2D74 /* TRModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRModel.swift; sourceTree = "<group>"; };
 		A5A331552692E99E002F2D74 /* TRProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRProgressView.swift; sourceTree = "<group>"; };
 		A5CC89FF2692FD2B00983B96 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		A5CC8A0826932A1600983B96 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				830C02D266837601E968AFED /* Pods_TRTakeHome__iOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,15 +108,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		296B87D373496D0923B4851D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5731612756A481CA82FDEFD7 /* Pods_TRTakeHome__iOS_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A5A3310C2692DFDA002F2D74 = {
 			isa = PBXGroup;
 			children = (
-				A5A331112692DFDB002F2D74 /* Shared */,
+				296B87D373496D0923B4851D /* Frameworks */,
 				A5A3311B2692DFDC002F2D74 /* iOS */,
 				A5A331222692DFDC002F2D74 /* macOS */,
+				A5CC8A0826932A1600983B96 /* Podfile */,
+				A65A3901146BA28F3495F85A /* Pods */,
+				A5A3311A2692DFDC002F2D74 /* Products */,
+				A5A331112692DFDB002F2D74 /* Shared */,
 				A5A3312C2692DFDC002F2D74 /* Tests iOS */,
 				A5A331372692DFDD002F2D74 /* Tests macOS */,
-				A5A3311A2692DFDC002F2D74 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,6 +192,15 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		A65A3901146BA28F3495F85A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74BA2108A53C6A38CC5FA7F5 /* Pods-TRTakeHome (iOS).debug.xcconfig */,
+				55CCDA2DCC24B3B99AF1A027 /* Pods-TRTakeHome (iOS).release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,9 +208,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5A331432692DFDD002F2D74 /* Build configuration list for PBXNativeTarget "TRTakeHome (iOS)" */;
 			buildPhases = (
+				76A85451392FB707A395F9C1 /* [CP] Check Pods Manifest.lock */,
 				A5A331152692DFDC002F2D74 /* Sources */,
 				A5A331162692DFDC002F2D74 /* Frameworks */,
 				A5A331172692DFDC002F2D74 /* Resources */,
+				A9AD1D3B832D61256A8F398B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -297,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5CC8A0926932A1600983B96 /* Podfile in Resources */,
 				A5A3313F2692DFDD002F2D74 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5CC8A0A26932A1600983B96 /* Podfile in Resources */,
 				A5A331402692DFDD002F2D74 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +356,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		76A85451392FB707A395F9C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TRTakeHome (iOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9AD1D3B832D61256A8F398B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TRTakeHome (iOS)/Pods-TRTakeHome (iOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TRTakeHome (iOS)/Pods-TRTakeHome (iOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TRTakeHome (iOS)/Pods-TRTakeHome (iOS)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A5A331152692DFDC002F2D74 /* Sources */ = {
@@ -439,6 +513,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -492,6 +568,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -501,6 +579,7 @@
 		};
 		A5A331442692DFDD002F2D74 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74BA2108A53C6A38CC5FA7F5 /* Pods-TRTakeHome (iOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -523,6 +602,7 @@
 		};
 		A5A331452692DFDD002F2D74 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55CCDA2DCC24B3B99AF1A027 /* Pods-TRTakeHome (iOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -550,6 +630,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 53M887FS75;
@@ -574,6 +655,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 53M887FS75;
