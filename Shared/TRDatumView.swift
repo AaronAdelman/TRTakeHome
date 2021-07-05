@@ -13,10 +13,18 @@ import Foundation
 struct TRDatumView: View {
     var datum: Datum
     
+    fileprivate func requestURL() -> URL {
+        let provisionalURL: URL? = URL(string: datum.link)
+        if provisionalURL == nil {
+            return URL(string: "http://google.com")! // Fallback URL you get when the programmer is in a hurry.
+        }
+        return provisionalURL!
+    }
+    
     var body: some View {
         let nameAndDateString = datum.author.name + " / " + datum.date.formattedFromTimestamp
         
-        let request = URLRequest(url: URL(string: datum.link)!)
+        let request = URLRequest(url: requestURL())
         NavigationLink(destination: WebView(request: request)) {
             VStack(alignment: .leading) {
                 let imageSource = datum.image.src
