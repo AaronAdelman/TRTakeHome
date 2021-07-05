@@ -17,6 +17,10 @@
 		A5A331402692DFDD002F2D74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5A331142692DFDC002F2D74 /* Assets.xcassets */; };
 		A5A331502692E216002F2D74 /* TRQueryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A3314F2692E216002F2D74 /* TRQueryResponse.swift */; };
 		A5A331512692E216002F2D74 /* TRQueryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A3314F2692E216002F2D74 /* TRQueryResponse.swift */; };
+		A5A331532692E880002F2D74 /* TRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A331522692E880002F2D74 /* TRModel.swift */; };
+		A5A331542692E880002F2D74 /* TRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A331522692E880002F2D74 /* TRModel.swift */; };
+		A5A331562692E99E002F2D74 /* TRProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A331552692E99E002F2D74 /* TRProgressView.swift */; };
+		A5A331572692E99E002F2D74 /* TRProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A331552692E99E002F2D74 /* TRProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,8 @@
 		A5A331382692DFDD002F2D74 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		A5A3313A2692DFDD002F2D74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5A3314F2692E216002F2D74 /* TRQueryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRQueryResponse.swift; sourceTree = "<group>"; };
+		A5A331522692E880002F2D74 /* TRModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRModel.swift; sourceTree = "<group>"; };
+		A5A331552692E99E002F2D74 /* TRProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +107,12 @@
 		A5A331112692DFDB002F2D74 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				A5A331122692DFDB002F2D74 /* TRTakeHomeApp.swift */,
-				A5A331132692DFDB002F2D74 /* ContentView.swift */,
 				A5A331142692DFDC002F2D74 /* Assets.xcassets */,
+				A5A331132692DFDB002F2D74 /* ContentView.swift */,
+				A5A331522692E880002F2D74 /* TRModel.swift */,
 				A5A3314F2692E216002F2D74 /* TRQueryResponse.swift */,
+				A5A331122692DFDB002F2D74 /* TRTakeHomeApp.swift */,
+				A5A331552692E99E002F2D74 /* TRProgressView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -313,8 +321,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5A3313D2692DFDD002F2D74 /* ContentView.swift in Sources */,
+				A5A331562692E99E002F2D74 /* TRProgressView.swift in Sources */,
 				A5A331502692E216002F2D74 /* TRQueryResponse.swift in Sources */,
 				A5A3313B2692DFDD002F2D74 /* TRTakeHomeApp.swift in Sources */,
+				A5A331532692E880002F2D74 /* TRModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,8 +333,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5A3313E2692DFDD002F2D74 /* ContentView.swift in Sources */,
+				A5A331572692E99E002F2D74 /* TRProgressView.swift in Sources */,
 				A5A331512692E216002F2D74 /* TRQueryResponse.swift in Sources */,
 				A5A3313C2692DFDD002F2D74 /* TRTakeHomeApp.swift in Sources */,
+				A5A331542692E880002F2D74 /* TRModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
