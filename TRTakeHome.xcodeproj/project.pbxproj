@@ -24,6 +24,8 @@
 		A5A331542692E880002F2D74 /* TRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A331522692E880002F2D74 /* TRModel.swift */; };
 		A5A331562692E99E002F2D74 /* TRProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A331552692E99E002F2D74 /* TRProgressView.swift */; };
 		A5A331572692E99E002F2D74 /* TRProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A331552692E99E002F2D74 /* TRProgressView.swift */; };
+		A5CC0EDD269339E4008CB42F /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC0EDC269339E4008CB42F /* WebView.swift */; };
+		A5CC0EDE269339E4008CB42F /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC0EDC269339E4008CB42F /* WebView.swift */; };
 		A5CC8A002692FD2B00983B96 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC89FF2692FD2B00983B96 /* StringExtensions.swift */; };
 		A5CC8A012692FD2B00983B96 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC89FF2692FD2B00983B96 /* StringExtensions.swift */; };
 		A5CC8A02269301AA00983B96 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC89FF2692FD2B00983B96 /* StringExtensions.swift */; };
@@ -71,6 +73,7 @@
 		A5A3314F2692E216002F2D74 /* TRQueryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRQueryResponse.swift; sourceTree = "<group>"; };
 		A5A331522692E880002F2D74 /* TRModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRModel.swift; sourceTree = "<group>"; };
 		A5A331552692E99E002F2D74 /* TRProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRProgressView.swift; sourceTree = "<group>"; };
+		A5CC0EDC269339E4008CB42F /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		A5CC89FF2692FD2B00983B96 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		A5CC8A0826932A1600983B96 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
@@ -142,6 +145,7 @@
 				A5A331552692E99E002F2D74 /* TRProgressView.swift */,
 				A5A3314F2692E216002F2D74 /* TRQueryResponse.swift */,
 				A5A331122692DFDB002F2D74 /* TRTakeHomeApp.swift */,
+				A5CC0EDC269339E4008CB42F /* WebView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -405,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5CC8A002692FD2B00983B96 /* StringExtensions.swift in Sources */,
+				A5CC0EDD269339E4008CB42F /* WebView.swift in Sources */,
 				A543D1E92692F48000044706 /* TRDatumView.swift in Sources */,
 				A5A3313D2692DFDD002F2D74 /* ContentView.swift in Sources */,
 				A5A331562692E99E002F2D74 /* TRProgressView.swift in Sources */,
@@ -419,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5CC8A012692FD2B00983B96 /* StringExtensions.swift in Sources */,
+				A5CC0EDE269339E4008CB42F /* WebView.swift in Sources */,
 				A543D1EA2692F48000044706 /* TRDatumView.swift in Sources */,
 				A5A3313E2692DFDD002F2D74 /* ContentView.swift in Sources */,
 				A5A331572692E99E002F2D74 /* TRProgressView.swift in Sources */,
