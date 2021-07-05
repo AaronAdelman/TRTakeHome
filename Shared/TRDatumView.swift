@@ -9,14 +9,15 @@ import SwiftUI
 
 struct TRDatumView: View {
     var datum: Datum
-    
+        
     var body: some View {
         VStack {
             Text(datum.title)
+                .font(.title)
             HStack {
                 Text(datum.author.name)
                 Text("/")
-                Text(datum.date)
+                Text(datum.date.formattedFromTimestamp)
             }
         }
     }

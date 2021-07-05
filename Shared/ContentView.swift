@@ -55,7 +55,7 @@ struct ContentView: View {
                         }
                         Spacer()
                     } else {
-                        TRTextMessage(text: NSLocalizedString("No results.  Please enter a search term to see cool images.", comment: ""))
+                        TRTextMessage(text: NSLocalizedString("No results.  Please enter a search term to see news articles.", comment: ""))
                     }
                 }
             } // VStack
