@@ -62,8 +62,6 @@
 		A5A331192692DFDC002F2D74 /* TRTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TRTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5A3311C2692DFDC002F2D74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5A331212692DFDC002F2D74 /* TRTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TRTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5A331232692DFDC002F2D74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5A331242692DFDC002F2D74 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		A5A331292692DFDC002F2D74 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5A3312D2692DFDC002F2D74 /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
 		A5A3312F2692DFDC002F2D74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 			children = (
 				296B87D373496D0923B4851D /* Frameworks */,
 				A5A3311B2692DFDC002F2D74 /* iOS */,
-				A5A331222692DFDC002F2D74 /* macOS */,
 				A5CC8A0826932A1600983B96 /* Podfile */,
 				A65A3901146BA28F3495F85A /* Pods */,
 				A5A3311A2692DFDC002F2D74 /* Products */,
@@ -167,15 +164,6 @@
 				A5A3311C2692DFDC002F2D74 /* Info.plist */,
 			);
 			path = iOS;
-			sourceTree = "<group>";
-		};
-		A5A331222692DFDC002F2D74 /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				A5A331232692DFDC002F2D74 /* Info.plist */,
-				A5A331242692DFDC002F2D74 /* macOS.entitlements */,
-			);
-			path = macOS;
 			sourceTree = "<group>";
 		};
 		A5A3312C2692DFDC002F2D74 /* Tests iOS */ = {
