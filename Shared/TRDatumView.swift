@@ -36,10 +36,12 @@ struct TRDatumView: View {
                             .placeholder({
                                 TRProgressView()
                             })
+                            .resizable()
+                            .scaledToFit()
                     }
                 }
                 
-                
+                let IMAGE_MAX_DIMENSION: CGFloat = 64.0
                 HStack {
                     let authorImageSource = datum.author.image.src
                     if authorImageSource != nil {
@@ -49,6 +51,8 @@ struct TRDatumView: View {
                                 .placeholder({
                                     TRProgressView()
                                 })
+                                .resizable()
+                                .frame(maxWidth: IMAGE_MAX_DIMENSION, maxHeight: IMAGE_MAX_DIMENSION)
                                 .clipShape(Circle())
                                 .overlay(Circle()
                                             .stroke(Color.black, lineWidth: 2.0))
